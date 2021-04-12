@@ -156,6 +156,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QVALEEFC
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for EvoHD_Lite\Design Rule Check - EvoHD_Lite_RevA.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
