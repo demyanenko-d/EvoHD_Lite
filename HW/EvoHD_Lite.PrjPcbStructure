@@ -1,1 +1,4 @@
-Record=TopLevelDocument|FileName=bus.SchDoc
+Record=TopLevelDocument|FileName=bus.SchDoc|SheetNumber= 
+Record=NoMainPathDocument|SourceDocument=bus.SchDoc|FileName=fpga.SchDoc|SheetNumber= 
+Record=NoMainPathDocument|SourceDocument=bus.SchDoc|FileName=hdmi.SchDoc|SheetNumber= 
+Record=NoMainPathDocument|SourceDocument=bus.SchDoc|FileName=power.SchDoc|SheetNumber= 
