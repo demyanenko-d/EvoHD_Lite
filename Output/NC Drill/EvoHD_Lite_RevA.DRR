@@ -1,0 +1,21 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: EvoHD_Lite_RevA.PcbDoc   23.04.2021  14:29:42
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : EvoHD_Lite_RevA-RoundHoles.TXT
+ASCII SlotHoles File : EvoHD_Lite_RevA-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             175       PTH        0.00inch (0.00mm)
+T2      35mil (0.9mm)                                             Round             12        PTH        0.00inch (0.00mm)
+T3      35mil (0.9mm)                                             Slot              4         PTH        0.00inch (0.00mm)
+T4      39mil (1mm)                                               Round             16        PTH        0.00inch (0.00mm)
+T5      43mil (1.1mm)                                             Round             44        PTH        0.00inch (0.00mm)
+T6      79mil (2mm)                                               Round             1         PTH        0.00inch (0.00mm)
+T7      138mil (3.5mm)                                            Round             3         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              255
+
+Total Processing Time (hh:mm:ss) : 00:00:00
