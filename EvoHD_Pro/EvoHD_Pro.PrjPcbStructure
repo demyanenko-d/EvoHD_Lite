@@ -1,0 +1,7 @@
+Record=TopLevelDocument|FileName=Bus.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=Bus.SchDoc|FileName=Connectors.SchDoc|SheetNumber=7
+Record=NoMainPathDocument|SourceDocument=Bus.SchDoc|FileName=Fpga.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=Bus.SchDoc|FileName=Hdmi.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=Bus.SchDoc|FileName=Memory.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=Bus.SchDoc|FileName=Network.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=Bus.SchDoc|FileName=Power.SchDoc|SheetNumber=1
