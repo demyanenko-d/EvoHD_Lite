@@ -4,3 +4,6 @@ Project Outputs for *
 __Previews
 *report.txt
 *.htm
+SW_Lite/db
+SW_Lite/incremental_db
+SW_Lite/output_files
