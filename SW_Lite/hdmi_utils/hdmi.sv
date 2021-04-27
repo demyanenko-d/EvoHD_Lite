@@ -49,6 +49,10 @@ module hdmi
     // These outputs go to your HDMI port
     output logic [2:0] tmds,
     output logic tmds_clock,
+	 
+	 // These outputs go to your HDMI port, addition
+    output logic [2:0] tmds1,
+    output logic tmds1_clock,
     
     // All outputs below this line stay inside the FPGA
     // They are used (by you) to pick the color each pixel should have
@@ -340,6 +344,30 @@ generate
     end
 endgenerate
 
-serializer #(.NUM_CHANNELS(NUM_CHANNELS), .VIDEO_RATE(VIDEO_RATE)) serializer(.clk_pixel(clk_pixel), .clk_pixel_x5(clk_pixel_x5), .reset(reset), .tmds_internal(tmds_internal), .tmds(tmds), .tmds_clock(tmds_clock));
+serializer #(
+		.NUM_CHANNELS(NUM_CHANNELS),
+		.VIDEO_RATE(VIDEO_RATE)
+	) 
+serializer(
+	.clk_pixel(clk_pixel),
+	.clk_pixel_x5(clk_pixel_x5),
+	.reset(reset),
+	.tmds_internal(tmds_internal),
+	.tmds(tmds),
+	.tmds_clock(tmds_clock)
+);
+
+serializer #(
+		.NUM_CHANNELS(NUM_CHANNELS),
+		.VIDEO_RATE(VIDEO_RATE)
+	) 
+serializer_1(
+	.clk_pixel(clk_pixel),
+	.clk_pixel_x5(clk_pixel_x5),
+	.reset(reset),
+	.tmds_internal(tmds_internal),
+	.tmds(tmds1),
+	.tmds_clock(tmds1_clock)
+);
 
 endmodule

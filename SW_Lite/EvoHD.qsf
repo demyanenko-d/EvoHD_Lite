@@ -70,8 +70,8 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_32 -to VID_VS
-set_location_assignment PIN_27 -to VID_HS
-set_location_assignment PIN_25 -to VID_CLK
+set_location_assignment PIN_33 -to VID_HS
+set_location_assignment PIN_28 -to VID_CLK
 set_location_assignment PIN_141 -to VID_MODE
 set_location_assignment PIN_140 -to VID_R[0]
 set_location_assignment PIN_138 -to VID_R[1]
@@ -88,29 +88,9 @@ set_location_assignment PIN_125 -to VID_G[0]
 set_location_assignment PIN_123 -to VID_G[1]
 set_location_assignment PIN_116 -to VID_G[2]
 set_location_assignment PIN_117 -to VID_G[3]
-set_location_assignment PIN_74 -to LED
-set_location_assignment PIN_75 -to GPIO[0]
-set_location_assignment PIN_76 -to GPIO[1]
-set_location_assignment PIN_77 -to GPIO[2]
-set_location_assignment PIN_78 -to GPIO[3]
-set_location_assignment PIN_84 -to DAC_WS
-set_location_assignment PIN_81 -to DAC_D
-set_location_assignment PIN_85 -to DAC_BCK
-set_location_assignment PIN_5 -to H_SPI_CLK
-set_location_assignment PIN_4 -to H_SPI_MISO
-set_location_assignment PIN_6 -to H_SPI_SS
-set_location_assignment PIN_3 -to H_SPI_MOSI
-set_location_assignment PIN_9 -to V_SPI_CLK
-set_location_assignment PIN_10 -to V_SPI_SS
-set_location_assignment PIN_7 -to V_SPI_MOSI
-set_location_assignment PIN_8 -to V_SPI_MISO
-set_location_assignment PIN_28 -to ESP32_CLK
-set_location_assignment PIN_112 -to ESP32_IO2
-set_location_assignment PIN_113 -to ESP32_IO21
-set_location_assignment PIN_115 -to ESP32_IO35
-set_location_assignment PIN_114 -to ESP32_IO34
-set_location_assignment PIN_86 -to ESP32_IO4
-set_location_assignment PIN_87 -to ESP32_IO22
+set_location_assignment PIN_114 -to GPIO[0]
+set_location_assignment PIN_113 -to GPIO[1]
+set_location_assignment PIN_112 -to GPIO[2]
 set_global_assignment -name GENERATE_SVF_FILE OFF
 set_global_assignment -name GENERATE_JAM_FILE OFF
 set_global_assignment -name GENERATE_JBC_FILE OFF
@@ -126,14 +106,14 @@ set_instance_assignment -name IO_STANDARD LVDS -to HDMI_TX[2]
 set_instance_assignment -name IO_STANDARD LVDS -to HDMI_TX[1]
 set_instance_assignment -name IO_STANDARD LVDS -to HDMI_TX[0]
 set_instance_assignment -name IO_STANDARD LVDS -to HDMI_TX
-set_location_assignment PIN_54 -to HDMI_CLK
-set_location_assignment PIN_52 -to "HDMI_CLK(n)"
-set_location_assignment PIN_61 -to HDMI_TX[0]
-set_location_assignment PIN_59 -to "HDMI_TX[0](n)"
-set_location_assignment PIN_65 -to HDMI_TX[1]
-set_location_assignment PIN_63 -to "HDMI_TX[1](n)"
-set_location_assignment PIN_69 -to HDMI_TX[2]
-set_location_assignment PIN_67 -to "HDMI_TX[2](n)"
+set_location_assignment PIN_42 -to HDMI_CLK
+set_location_assignment PIN_40 -to "HDMI_CLK(n)"
+set_location_assignment PIN_46 -to HDMI_TX[0]
+set_location_assignment PIN_44 -to "HDMI_TX[0](n)"
+set_location_assignment PIN_50 -to HDMI_TX[1]
+set_location_assignment PIN_48 -to "HDMI_TX[1](n)"
+set_location_assignment PIN_54 -to HDMI_TX[2]
+set_location_assignment PIN_52 -to "HDMI_TX[2](n)"
 set_global_assignment -name VERILOG_FILE vga_text_mode/glyphmap.v
 set_global_assignment -name VERILOG_FILE vga_text_mode/console.v
 set_global_assignment -name VERILOG_FILE vga_text_mode/attributemap.v
@@ -154,4 +134,16 @@ set_global_assignment -name SYSTEMVERILOG_FILE TMDS_ENCODE.sv
 set_global_assignment -name SYSTEMVERILOG_FILE DVI_OUT.sv
 set_global_assignment -name SYSTEMVERILOG_FILE LUT.sv
 set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_instance_assignment -name IO_STANDARD LVDS_E_3R -to HDMI1_CLK
+set_instance_assignment -name IO_STANDARD LVDS_E_3R -to HDMI1_TX[2]
+set_instance_assignment -name IO_STANDARD LVDS_E_3R -to HDMI1_TX[1]
+set_instance_assignment -name IO_STANDARD LVDS_E_3R -to HDMI1_TX[0]
+set_location_assignment PIN_90 -to HDMI1_TX[0]
+set_location_assignment PIN_91 -to "HDMI1_TX[0](n)"
+set_location_assignment PIN_94 -to HDMI1_TX[1]
+set_location_assignment PIN_95 -to "HDMI1_TX[1](n)"
+set_location_assignment PIN_97 -to HDMI1_TX[2]
+set_location_assignment PIN_99 -to "HDMI1_TX[2](n)"
+set_location_assignment PIN_88 -to HDMI1_CLK
+set_location_assignment PIN_89 -to "HDMI1_CLK(n)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
