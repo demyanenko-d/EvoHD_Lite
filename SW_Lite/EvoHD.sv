@@ -19,7 +19,7 @@ module EvoHD(
 	input		wire			VID_CLK,
 	
 	// GPIO
-	inout		wire	[2:0]	GPIO
+	inout		reg	[2:0]	GPIO
 );
 
 wire clk_pixel_x5;
@@ -34,36 +34,52 @@ MainPLL ppl0(
 );
 
 
+wire			rdy, tv_mode, vga_mode;
+wire [1:0]	mode;
+
+reg [1:0]	hs_sync, vs_sync;
+
+always @ (posedge VID_CLK)
+begin	
+	hs_sync = {hs_sync[0], VID_HS};
+	vs_sync = {vs_sync[0], VID_VS};
+end
+
+
+sync_detect inst0(
+	.clk_i		(VID_CLK),
+	.hsi_i		(VID_HS),
+	.vsi_i		(VID_VS),
+
+	.tv_mode_o	(tv_mode),
+	.vga_mode_o	(vga_mode),
+	.rdy_o		(rdy),	
+	.mode_o		(mode)
+);
+
+
 logic [23:0] rgb;
 logic [9:0] cx, cy;
 
 hdmi #(
-	.VIDEO_ID_CODE(17),
-	.DVI_OUTPUT(1'b1)
+	.VIDEO_ID_CODE(17)
 ) hdmi(
 	.clk_pixel_x5(clk_pixel_x5), 
 	.clk_pixel(clk_pixel), 
 	.rgb(rgb), 
 	
+	//.v_mode(mode),
+	//.ext_sync(vs_sync == 2'b10),
+	//.reset(),
+	.hs_ext(VID_HS),
+	.vs_ext(VID_VS),
+	.mode_ext(mode),
+	
 	.tmds(HDMI_TX), 
 	.tmds_clock(HDMI_CLK),
 	.tmds1(HDMI1_TX), 
-	.tmds1_clock(HDMI1_CLK),
-	
-	.cx(cx), 
-	.cy(cy)
+	.tmds1_clock(HDMI1_CLK)
 );
-
-reg [7:0] rv, gv, bv, val;
-
-always @ *
-begin
-	val = cy[8] ? (255 - cx[8:1]) : cx[8:1];
-	
-	rv = cy[5] ? val : 8'b0;
-	gv = cy[6] ? val : 8'b0;
-	bv = cy[7] ? val : 8'b0;
-end
 
 
 assign rgb = {VID_R, 3'b0, VID_G, 3'b0, VID_B, 3'b0}; 
